@@ -1,0 +1,17 @@
+Hi,
+
+I have a problem with the cochlea segmentation module.
+This modul create always the same cochlea that is not consist with the real image.
+I used Slicer 4.10.0 (on the latest version 4.11. this extension not work, always drop an error:
+
+Traceback (most recent call last):
+  File "D:/Programok/Slicer 4.11.20210226/NA-MIC/Extensions-29738/SlicerCochlea/lib/Slicer-4.11/qt-scripted-modules/CochleaSeg.py", line 240, in onApplyBtnClick
+    self.logic.run( self.inputSelectorCoBx.currentNode(),self.logic.inputFiducialNode, self.vsc.vtVars['cochleaSide'] )
+  File "D:/Programok/Slicer 4.11.20210226/NA-MIC/Extensions-29738/SlicerCochlea/lib/Slicer-4.11/qt-scripted-modules/CochleaSeg.py", line 315, in run
+    self.vsc.vtVars['intputCropPath'] = self.vsc.runCropping(inputVolumeNode, inputPointT,self.vsc.vtVars['croppingLength'],  self.vsc.vtVars['RSxyz'],  self.vsc.vtVars['hrChk'],0)
+  File "D:\Programok\Slicer 4.11.20210226\NA-MIC\Extensions-29738\SlicerCochlea\lib\Slicer-4.11\qt-scripted-modules\VisSimCommon.py", line 449, in runCropping
+    croppedImage = cropper.Execute(inputImage, croppingBounds[0], croppingBounds[1])
+TypeError: Execute() takes 2 positional arguments but 4 were given
+
+I wrote this problem under the forum also:
+https://discourse.slicer.org/t/vissim-cochlea-tools-extension-is-now-public/4122/15
